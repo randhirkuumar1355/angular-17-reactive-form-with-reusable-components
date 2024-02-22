@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-light">
+          <h5 class="text-secondary">
+            Employees List
+            <!-- <button class="btn btn-sm btn-dark pull-right" (click)="btnNew()">
+                <i class="fa fa-plus-circle"></i> Add New
+              </button> -->
+              <app-button [btnType]="btnType" class="pull-right" (OnClick)="btnNew()" [lblBtn]="lblButton" [btnClass]="clsButton" [iconClass]="icnClass"></app-button>
+          </h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm table-striped table-light">
+            <thead>
+              <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>DOJ</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Salary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="employees.length>0; else noData">
+                  <tr *ngFor="let emp of employees; let i = index">
+                      <td>{{i+1}}</td>
+                      <td>{{emp.firstName}}</td>
+                      <td>{{emp.lastName}}</td>
+                      <td>{{emp.gender}}</td>
+                      <td>{{emp.doj}}</td>
+                      <td>{{emp.email}}</td>
+                      <td>{{emp.mobile}}</td>
+                      <td>{{emp.salary}}</td>
+                    </tr>
+              </ng-container>
+              <ng-template #noData>
+                  <tr>
+                      <td colspan="8" class="text-danger">No data found</td>
+                  </tr>
+              </ng-template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+<app-footer></app-footer>

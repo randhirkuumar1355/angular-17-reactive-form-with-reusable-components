@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-light">
+          <h5 class="text-secondary">
+            {{lblHeader}}
+          </h5>
+        </div>
+        <div class="card-body">
+              <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+              <div class="modal-body">
+                  <div class="form-group mb-1">
+                    <div class="row">
+                      <div class="col-md-1">First Name</div>
+                      <div class="col-md-11">
+                        <app-input formControlName="firstName" [label]="'First name'" [type]="'text'" [inputClass]="'form-control-md'" [placeholder]="'Enter first name'" [required]="true"></app-input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-2">
+                    <div class="row">
+                      <div class="col-md-1">Last Name</div>
+                      <div class="col-md-11">
+                        <app-input formControlName="lastName" [label]="'Last name'" [type]="'text'" [inputClass]="'form-control-md'" [placeholder]="'Enter last name'" [required]="true"></app-input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-2">
+                    <div class="row">
+                      <div class="col-md-1">Gender</div>
+                      <div class="col-md-11">
+                        <label class="radio-inline">
+                            <app-radio formControlName="gender" [nameText]="'gender'" [valueText]="'Male'"></app-radio> {{'Male'}}
+                        </label>
+                        <label class="radio-inline ms-3">
+                            <app-radio formControlName="gender" [nameText]="'gender'" [valueText]="'Female'"></app-radio> {{'Female'}}
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-1">
+                    <div class="row">
+                      <div class="col-md-1">DOJ</div>
+                      <div class="col-md-11">
+                        <app-input formControlName="doj" [label]="'DOJ'" [type]="'text'" [inputClass]="'form-control-md'" [placeholder]="'Enter date of joining'" [required]="true"></app-input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-1">
+                    <div class="row">
+                      <div class="col-md-1">Email</div>
+                      <div class="col-md-11">
+                        <app-input formControlName="email" [label]="'Email'" [type]="'email'" [inputClass]="'form-control-md'" [placeholder]="'Enter email'" [required]="true"></app-input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-1">
+                    <div class="row">
+                      <div class="col-md-1">Mobile</div>
+                      <div class="col-md-11">
+                        <app-input formControlName="mobile" [label]="'Mobile'" [minlength]="10" [maxlength]="10" [type]="'number'" [inputClass]="'form-control-md'" [placeholder]="'Enter mobile no.'" [required]="true"></app-input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-1">
+                    <div class="row">
+                      <div class="col-md-1">Salary</div>
+                      <div class="col-md-11">
+                        <app-input formControlName="salary" [label]="'Salary'" [maxlength]="10" [type]="'number'" [inputClass]="'form-control-md'" [placeholder]="'Enter salary'" [required]="true"></app-input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3">
+                    <div class="row">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-11">
+                          <app-button [btnType]="btnType" (OnClick)="goToEmployeesList()" [lblBtn]="lblBackButton" [btnClass]="clsBackButton" [iconClass]="icnBackClass"></app-button>
+                          <app-button [btnType]="btnType" (OnClick)="clearForm()" [lblBtn]="lblCancelButton" [btnClass]="clsCancelButton" [iconClass]="icnCancelClass"></app-button>
+                          <app-button [btnType]="btnSubmitType" [lblBtn]="lblSubmitButton" [btnClass]="clsSubmitlButton" [isDisabled]="!employeeForm.valid" [iconClass]="icnSubmitClass"></app-button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

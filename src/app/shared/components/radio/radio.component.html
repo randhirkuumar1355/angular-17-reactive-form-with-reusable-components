@@ -1,0 +1,13 @@
+<input name="{{nameText}}"
+    #BasicRadioInput="ngModel"
+    id= "{{ identifier }}-{{ nameText.replace(' ', '-') }}-{{ i }}"
+    class="radio-custom"
+    type="radio"
+    [value]="valueText"
+    [(ngModel)]="value"  
+    [disabled]="disabled"
+    [required]="required" 
+/>
+<label class="radio-custom-label" for="{{ identifier }}-{{ nameText.replace(' ', '-') }}-{{ i }}">
+    {{ placeholder }} 
+</label>

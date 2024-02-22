@@ -1,0 +1,35 @@
+<input #simpleInputText="ngModel" [name]="name"
+[type]="type"
+[required]="required"
+[placeholder]="placeholder" 
+[tabindex]="taborder" 
+[value]="value"
+[readonly]="isReadOnly"
+[(ngModel)]="value"
+[pattern]="customPattern"
+[autofocus]="focused"
+[disabled]="isDisabled"
+class="form-control"
+[ngClass]="inputClass"
+[id]="identifier"    
+[max]="maxlength"
+[maxlength]="maxlength"
+[min]="minlength"
+[minlength]="minlength" 
+/> 
+
+<!-- <label *ngIf="label" 
+class="simple-text-input-placeholder"
+[attr.for]="inputId"
+[class.required]="required"
+[class.simple-text-empty]="empty"
+[class.simple-text-focused]="focused"
+[class.simple-text-float]="isFloatLabel"
+[class.simple-text-accent]="dividerColor == 'accent'"
+[class.simple-text-warn]="dividerColor == 'warn'" 
+> {{ label }} </label>  -->
+<div class="error" *ngIf="(errorStatus == null && simpleInputText.errors && (simpleInputText.touched || simpleInputText.dirty) && !simpleInputText.valid) || (errorStatus == null && showErrors)">
+    <small *ngIf="required && simpleInputText.errors && simpleInputText.errors?.['required']" class="text-danger">
+        {{ label || 'This field' }} is required !
+    </small>
+</div>

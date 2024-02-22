@@ -1,0 +1,192 @@
+simple-text-box,
+simple-text-input,
+simple-text-textarea {
+  display: inline-block;
+  position: relative;
+  font-family: "Exo 2", sans-serif !important;
+  line-height: normal;
+  text-align: left;
+}
+[dir="rtl"] simple-text-input,
+[dir="rtl"] simple-text-textarea {
+  text-align: right;
+}
+
+.simple-text-input-wrapper {
+  margin: 0px 0;
+}
+
+input.simple-text-input-element:read-only {
+  background: #f5f6f7;
+}
+.simple-text-input-table {
+  display: inline-table;
+  flex-flow: column;
+  vertical-align: bottom;
+  width: 100%;
+}
+.simple-text-input-table > * {
+  display: table-cell;
+}
+
+.simple-text-input-infix {
+  position: relative;
+}
+
+.simple-text-input-suffix {
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  color: #a6b8bd;
+  font-family: "Exo 2", sans-serif !important;
+  font-size: 0.8vw;
+}
+.prefix-content {
+  position: absolute;
+  left: 16px;
+  z-index: 99;
+  color: #567c87;
+  font-family: "Exo 2", sans-serif !important;
+  font-size: 1vw;
+  top: 23px;
+}
+::ng-deep .simple-text-input-element {
+  font-size: 1vw;
+  font-family: "Exo 2", sans-serif !important;
+  text-align: left;
+  line-height: 19px;
+  letter-spacing: 0px;
+  color: #567c87 !important;
+  opacity: 1;
+  padding: 14px 0px 0px 16px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #dedfe0;
+  border-radius: 4px;
+  height: 56px;
+  color: currentColor;
+  outline: none;
+  width: 100%;
+}
+.simple-text-input-element.simple-text-end {
+  text-align: right;
+}
+[dir="rtl"] .simple-text-input-element.simple-text-end {
+  text-align: left;
+}
+.simple-text-input-element:-moz-ui-invalid {
+  box-shadow: none;
+}
+.simple-text-input-element:-webkit-autofill
+  + .simple-text-input-placeholder.simple-text-float {
+  display: block;
+
+  padding-bottom: 5px;
+  transform: translateY(-100%) scale(0.75);
+  width: 133.33333%;
+}
+
+.simple-text-input-placeholder {
+  position: absolute;
+  left: 16px;
+  top: 7px;
+  line-height: 16px;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #0c323d;
+  font-weight: 600;
+  font-size: 0.8vw;
+  font-family: "Exo 2", sans-serif !important;
+  pointer-events: none;
+  // z-index: 1;
+  width: 100%;
+  display: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  transform: translateY(0);
+  transform-origin: bottom left;
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    scale 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    color 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    width 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.simple-text-input-placeholder.simple-text-empty {
+  display: block;
+  cursor: text;
+}
+.simple-text-input-placeholder.simple-text-float:not(.simple-text-empty),
+.simple-text-input-placeholder.simple-text-float.simple-text-focused {
+  display: block;
+  padding-bottom: 5px;
+  // transform: translateY(-100%) scale(0.75);
+  width: 133.33333%;
+}
+[dir="rtl"] .simple-text-input-placeholder {
+  transform-origin: bottom right;
+}
+.simple-text-input-underline .simple-text-input-ripple {
+  position: absolute;
+  height: 2px;
+  z-index: 1;
+  top: -1px;
+  width: 100%;
+  transform-origin: top;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.simple-text-input-underline .simple-text-input-ripple.simple-text-focused {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.simple-text-hint {
+  display: block;
+  position: absolute;
+  font-size: 75%;
+  bottom: -0.5em;
+}
+.simple-text-hint.simple-text-right {
+  right: 0;
+}
+[dir="rtl"] .simple-text-hint {
+  right: 0;
+  left: auto;
+}
+[dir="rtl"] .simple-text-hint.simple-text-right {
+  right: auto;
+  left: 0;
+}
+
+::ng-deep .alert-danger {
+  color: #e5456d !important;
+  background-color: transparent !important;
+  border-color: #f2f4f5 !important;
+  text-align: left;
+  font-weight: 400;
+  font-size: 0.9vw;
+  line-height: 17px;
+  letter-spacing: 0px;
+  opacity: 1;
+}
+
+::ng-deep .alert {
+  padding: 0px !important;
+  margin: 0px !important;
+  border: none;
+}
+
+::ng-deep .simple-text-input-element:focus {
+  border: 2px solid #00b8f1 !important;
+  border-radius: 4px !important;
+}
+
+// ::ng-deep .ng-touched.ng-invalid{
+//   border:2px solid #e5456d !important;
+// }
+
+label.required::after {
+  content: "*";
+  color: #f90c03;
+}
